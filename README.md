@@ -19,20 +19,20 @@ TrackRuit is a full-stack job tracking application built using the **MERN stack*
 
 ## 🛠️ Tech Stack
 
-| Layer     | Tech Used                    |
-|-----------|------------------------------|
-| Frontend  | React.js (CRA), Tailwind CSS |
-| Backend   | Node.js, Express.js          |
-| Database  | MongoDB Atlas                |
-| Auth      | JWT                          |
-| Hosting   | Render (fullstack deploy)    |
+| Layer    | Tech Used                    |
+| -------- | ---------------------------- |
+| Frontend | React.js (CRA), Tailwind CSS |
+| Backend  | Node.js, Express.js          |
+| Database | MongoDB Atlas                |
+| Auth     | JWT                          |
+| Hosting  | Render (fullstack deploy)    |
 
 ---
 
 ## ⚙️ Installation (Local Development)
 
 ```bash
-git clone https://github.com/yourusername/trackruit.git
+git clone https://github.com/mdwarish7867/TrackRuit.git
 cd trackruit
 
 # Install backend dependencies
@@ -54,3 +54,4 @@ npm run build
 # Start backend (which serves the frontend)
 cd ../backend
 node server.js
+```
