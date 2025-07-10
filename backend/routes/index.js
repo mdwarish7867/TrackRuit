@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Import route modules
 const authRoutes = require("./authRoutes");
+const appRoutes = require("./appRoutes");
 
-// Use the routes
 router.use("/auth", authRoutes);
+router.use("/app", appRoutes); // or change based on your actual use
 
 module.exports = router;
