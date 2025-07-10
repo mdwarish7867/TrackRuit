@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Routes
-const mainRouter = require("./routes/index.js");
+const mainRouter = require("./routes");
 
 
 app.use("/api", mainRouter);
