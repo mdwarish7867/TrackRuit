@@ -40,6 +40,7 @@ if (process.env.NODE_ENV === "development") {
 // Routes
 const mainRouter = require("./routes/index.js");
 
+
 app.use("/api", mainRouter);
 
 // Error handling
