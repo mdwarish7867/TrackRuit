@@ -1,18 +1,14 @@
 const express = require("express");
 const router = express.Router();
 
-// Import route handlers
+// Explicit .js extensions
 const authRoutes = require("./authRoutes.js");
-const appRoutes = require("./appRoutes");
+const appRoutes = require("./appRoutes.js");
 
-// Debugging: Check if routes are valid middleware
-console.log(
-  "[DEBUG] authRoutes is function?",
-  typeof authRoutes === "function"
-); // Should be true
-console.log("[DEBUG] appRoutes is function?", typeof appRoutes === "function"); // Should be true
+// Debugging
+console.log("authRoutes type:", typeof authRoutes);
+console.log("appRoutes type:", typeof appRoutes);
 
-// Mount the routes
 router.use("/auth", authRoutes);
 router.use("/app", appRoutes);
 
