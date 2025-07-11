@@ -1,14 +1,13 @@
 import axios from "axios";
+import { BASE_API_URL } from "../utils/constants"; // ✅ Import this
 
-// Create Axios instance
 const api = axios.create({
-  baseURL: "http://localhost:5000/api/auth",
+  baseURL: BASE_API_URL, // ✅ Use the dynamic URL
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
   },
 });
-
 // Helper to extract error message
 const getErrorMessage = (error) => {
   if (error.response) {
