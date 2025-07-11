@@ -46,6 +46,7 @@ if (process.env.NODE_ENV === "development") {
 
 // Serve frontend build
 const frontendBuildPath = path.join(__dirname, "../frontend/build");
+
 console.log("Frontend build path:", frontendBuildPath);
 app.use(express.static(frontendBuildPath));
 

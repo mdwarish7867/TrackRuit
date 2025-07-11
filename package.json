@@ -1,13 +1,14 @@
 {
-    "name": "trackruit",
-    "version": "1.0.0",
-    "scripts": {
-      "install-backend": "cd backend && npm install",
-      "install-frontend": "cd frontend && npm install",
-      "build-frontend": "cd frontend && npm run build",
-      "start": "cd backend && node server.js"
-    },
-    "engines": {
-      "node": "18.x"
-    }
+  "name": "trackruit",
+  "version": "1.0.0",
+  "scripts": {
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "build-frontend": "cd frontend && npm run build",
+    "build": "cd backend && npm install --legacy-peer-deps && cd ../frontend && npm install && npm run build",
+    "start": "cd backend && node server.js"
+  },
+  "engines": {
+    "node": "20.x"
   }
+}
