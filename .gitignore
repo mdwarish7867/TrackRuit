@@ -1,0 +1,15 @@
+# Ignore node_modules everywhere
+node_modules/
+**/node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# OS and IDE files
+.DS_Store
+*.log
+*.swp
+
+# Optional: build output
+frontend/build/
