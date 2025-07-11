@@ -2,11 +2,16 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config({ path: "./.env" });
 
+// Debugging
+console.log("Current directory:", __dirname);
+console.log("Environment variables:", process.env);
+
 // Database connection
-const connectDB = require("./config/db");
+const connectDB = require("./config/db.js");
 connectDB();
 
 const app = express();
@@ -18,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS configuration
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL || "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })
@@ -37,13 +42,17 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Debug route imports
-const mainRouter = require("./routes");
-console.log("[SERVER] Main router type:", typeof mainRouter);
-console.log("[SERVER] Is router:", mainRouter.name === "router");
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// Routes
+// API Routes
+const mainRouter = require("./routes/index.js");
 app.use("/api", mainRouter);
+
+// Fallback to frontend
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+});
 
 // Error handling
 app.use((err, req, res, next) => {

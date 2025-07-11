@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Import route handlers
-const authRoutes = require("./authRoutes");
+const authRoutes = require("./authRoutes.js");
 const appRoutes = require("./appRoutes");
 
 // Debugging: Check if routes are valid middleware
