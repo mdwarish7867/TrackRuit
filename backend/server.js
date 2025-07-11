@@ -37,10 +37,12 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
-// Routes
+// Debug route imports
 const mainRouter = require("./routes");
+console.log("[SERVER] Main router type:", typeof mainRouter);
+console.log("[SERVER] Is router:", mainRouter.name === "router");
 
-
+// Routes
 app.use("/api", mainRouter);
 
 // Error handling
